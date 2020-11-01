@@ -19,7 +19,7 @@ const ResetPassword = () => {
         <Form.Control
           type="text"
           placeholder="CPF"
-          maxLength="24"
+          maxLength="14"
           value={cpf}
           onChange={({ target }) => setCpf(cpfMask(target.value))}
         />

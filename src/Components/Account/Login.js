@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
+import api from '../../Services/Api';
 
 const Login = () => {
   const [login, setLogin] = React.useState('');
@@ -9,7 +10,13 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(login, pass);
+    try {
+      const { data } = await api.post('auth/sign-in', { login, pass });
+
+      console.log(data);
+    } catch (e) {
+      console.log(e.response.data);
+    }
   };
 
   return (
@@ -34,8 +41,6 @@ const Login = () => {
       <Button variant="primary" type="submit">
         Enviar
       </Button>
-
-      {login}
     </Form>
   );
 };

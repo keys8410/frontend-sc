@@ -1,0 +1,107 @@
+@baseUrl = http://localhost:3001/v1
+
+@contentType = application/json
+
+@tokenMaster = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoyMCwic2VjdG9yIjoxLCJpYXQiOjE2MDMzOTI0ODMsImV4cCI6MTYwMzM5OTY4M30.oFEuv2cOZBIn7W-MoDTmkSUth1sTe9gXKwAtlTv86pM
+
+@tokenCoord = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoyMiwic2VjdG9yIjoyLCJpYXQiOjE2MDM4MjI0NDgsImV4cCI6MTYwMzgyOTY0OH0.YYiu-oUnJaBPRlReW8ZVA4mrlzx1itf8DA5TAnANUGE
+
+@tokenTech = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoyMCwic2VjdG9yIjoxLCJpYXQiOjE2MDMzOTI0ODMsImV4cCI6MTYwMzM5OTY4M30.oFEuv2cOZBIn7W-MoDTmkSUth1sTe9gXKwAtlTv86pM
+
+@resetToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InlhbmFsbWVpZGFnYXJjaWFAZ21haWwuY29tIiwiY3BmIjoiMDAwLjAyMC4wMDAtMTMiLCJpYXQiOjE2MDM4MjIzNTcsImV4cCI6MTYwMzgyMzI1N30.l5dhQ0dpMsyk3C3yDapTKjARtosN5gf2Ih1jw_YpcJU
+
+
+### /auth/sign-in login user - coord (1)
+
+POST {{baseUrl}}/auth/sign-in
+Content-Type: {{contentType}}
+
+{
+  "login": "yan.andrade",
+  "pass": "jhderpsa" 
+}
+
+
+### /auth/sign-in login user - coord (2)
+
+POST {{baseUrl}}/auth/sign-in
+Content-Type: {{contentType}}
+
+{
+  "login": "yan.garcia-803",
+  "pass": "hqudrsdf" 
+}
+
+
+
+
+### /auth/forgot-password
+
+POST {{baseUrl}}/auth/forgot-password
+Content-Type: {{contentType}}
+
+{
+  "cpf": "000.020.000-13",
+  "url": "{{baseUrl}}"
+}
+
+### /auth/reset-password
+
+POST {{baseUrl}}/auth/reset-password
+Content-Type: {{contentType}}
+
+{
+  "cpf": "000.020.000-13",
+  "resetToken": "{{resetToken}}"
+}
+
+
+
+
+### /users all users
+GET {{baseUrl}}/users
+Content-Type: {{contentType}}
+Authorization: Bearer {{tokenCoord}}
+
+
+### /users/:id_user unique user
+GET {{baseUrl}}/users/1
+Content-Type: {{contentType}}
+Authorization: Bearer {{tokenCoord}}
+
+
+### /users add user
+POST {{baseUrl}}/users
+Content-Type: {{contentType}}
+Authorization: Bearer {{tokenCoord}}
+
+{
+  "cpf": "000.000.251-55",
+  "email": "yanalmeidagarcia@gmail.com",
+  "name": "Yan Almeida Garcia",
+  "phone": "(61) 14444-4",
+  "sector": 2,
+  "gender": 1
+}
+
+
+### /users/:id_user delete user
+
+PUT {{baseUrl}}/users/223
+Content-Type: {{contentType}}
+Authorization: Bearer {{tokenCoord}}
+
+{
+  "email": "yanalmeidagarcia@gmail.com",
+  "phone": "(61) 14444-4444",
+  "sector": 2,
+  "gender": 1
+}
+
+
+### /users/:id_user delete user
+
+DELETE {{baseUrl}}/users/15
+Content-Type: {{contentType}}
+Authorization: Bearer {{tokenCoord}}
+
