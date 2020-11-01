@@ -5,16 +5,16 @@ import ForgotPassword from './ForgotPassword';
 import LoginForm from './LoginForm';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 
-const Login = () => {
+const Home = () => {
   return (
     <Container>
       <Row>
         <Col></Col>
       </Row>
 
-      <Row>
-        <Col>
-          <Card body>
+      <Row className="justify-content-md-center">
+        <Col md="auto">
+          <Card body style={{ width: '25rem' }}>
             <Routes>
               <Route path="/" element={<LoginForm />} />
               <Route path="/reset" element={<ResetPassword />} />
@@ -27,4 +27,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Home;
