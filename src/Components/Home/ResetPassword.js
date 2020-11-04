@@ -15,7 +15,6 @@ const ResetPassword = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group>
-        <Form.Label>CPF</Form.Label>
         <Form.Control
           type="text"
           placeholder="CPF"

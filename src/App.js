@@ -1,18 +1,29 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './Components/Account/Home';
+import Home from './Components/Home/Home';
+import ProtectedRoute from './Components/Helpers/ProtectedRoute';
+import Coord from './Components/Coord/Coord';
+
+import { UserStorage } from './UserContext';
+import Master from './Components/Master/Master';
+import Tech from './Components/Tech/Tech';
 
 import './Theme/mainTheme.scss';
 
 const App = () => {
   return (
-    <div>
+    <>
       <BrowserRouter>
-        <Routes>
-          <Route path="/*" element={<Home />} />
-        </Routes>
+        <UserStorage>
+          <Routes>
+            <Route path="/*" element={<Home />} />
+            <ProtectedRoute path="/master/" element={<Master />} />
+            <ProtectedRoute path="/coord" element={<Coord />} />
+            <ProtectedRoute path="/tech" element={<Tech />} />
+          </Routes>
+        </UserStorage>
       </BrowserRouter>
-    </div>
+    </>
   );
 };
 

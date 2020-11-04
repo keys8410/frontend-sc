@@ -34,7 +34,6 @@ Content-Type: {{contentType}}
 
 
 
-
 ### /auth/forgot-password
 
 POST {{baseUrl}}/auth/forgot-password
