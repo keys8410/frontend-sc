@@ -1,7 +1,12 @@
 import React from 'react';
 
-const Coord = () => {
-  return <div>Coord</div>;
-};
+import Layout from '../../Layout/Layout';
+
+/*import { Button } from 'react-bootstrap';
+import { Routes, Route } from 'react-router-dom';*/
+
+function Coord() {
+  return <Layout></Layout>;
+}
 
 export default Coord;

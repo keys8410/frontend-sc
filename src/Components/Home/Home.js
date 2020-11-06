@@ -5,7 +5,6 @@ import ForgotPassword from './ForgotPassword';
 import Login from './Login';
 import { Card, Col, Container, Row, Figure } from 'react-bootstrap';
 import Logo from '../../Assets/Logo.png';
-import { FaUsers } from 'react-icons/fa';
 
 const Home = () => {
   return (
@@ -22,13 +21,10 @@ const Home = () => {
       <Row className="justify-content-center" style={{ height: '75vh' }}>
         <Col sm="auto" xs="auto" className="align-self-center">
           <Card body style={{ width: '22rem' }} className="p-0">
-            <div className="align-self-center text-center mb-4">
-              <FaUsers color="#333" size="75" />
-            </div>
             <Routes>
               <Route path="/" element={<Login />} />
               <Route path="/forgot" element={<ForgotPassword />} />
-              <Route path="/reset" element={<ResetPassword />} />
+              <Route path="/reset/*" element={<ResetPassword />} />
             </Routes>
           </Card>
         </Col>
