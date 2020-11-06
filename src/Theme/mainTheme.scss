@@ -98,4 +98,5 @@ $component-active-bg: $theme-base;
 $link-color: $component-active-bg !default;
 $input-focus-border-color: lighten($component-active-bg, 45%);
 
+@import '~react-pro-sidebar/dist/scss/styles.scss';
 @import '~bootstrap/scss/bootstrap';
