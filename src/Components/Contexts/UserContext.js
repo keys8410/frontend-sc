@@ -1,11 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuthUser, postAuthUser } from '../../Services/Auth';
+import coordItens from '../Coord/coordItens.json';
 
 export const UserContext = React.createContext();
 
 export const UserStorage = ({ children }) => {
   const [data, setData] = React.useState(null);
+  const [menuItens, setMenuItens] = React.useState(null);
   const [user, setUser] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
@@ -14,6 +16,7 @@ export const UserStorage = ({ children }) => {
 
   const userLogout = React.useCallback(async () => {
     setData(null);
+    setMenuItens(null);
     setError(null);
     setLoading(false);
     setUser(false);
@@ -29,14 +32,19 @@ export const UserStorage = ({ children }) => {
       switch (Number(sector)) {
         case 1:
           navigate('/master');
+          setMenuItens();
           break;
 
         case 2:
           navigate('/coord');
+          setMenuItens(coordItens);
+
           break;
 
         case 3:
           navigate('/tech');
+          setMenuItens();
+
           break;
 
         default:
@@ -112,7 +120,7 @@ export const UserStorage = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ userLogin, userLogout, data, error, loading, user }}
+      value={{ userLogin, userLogout, data, error, loading, user, menuItens }}
     >
       {children}
     </UserContext.Provider>

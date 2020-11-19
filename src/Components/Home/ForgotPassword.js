@@ -19,7 +19,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     const url = window.location.href.replace('forgot', 'reset');
 
-    const { res } = request(postForgotPassword({ cpf, url }));
+    const res = await request(postForgotPassword({ cpf, url }));
 
     window.localStorage.removeItem('tkn');
     window.localStorage.removeItem('sct');

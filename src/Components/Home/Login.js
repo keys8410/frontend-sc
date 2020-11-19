@@ -27,7 +27,6 @@ const Login = () => {
       </div>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
-          <Form.Label>teste</Form.Label>
           <Form.Control
             type="text"
             placeholder="Login"
