@@ -73,7 +73,7 @@ $info: $cyan !default;
 $warning: $yellow !default;
 $danger: $red !default;
 $light: $gray-100 !default;
-$dark: $gray-800 !default;
+$dark: $gray-300 !default;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -112,6 +112,10 @@ $breakpoint-sm: 576px !default;
 $breakpoint-md: 768px !default;
 $breakpoint-lg: 992px !default;
 $breakpoint-xl: 1200px !default;
+
+.dropdown-toggle::after {
+  display: none !important;
+}
 
 @import '~react-pro-sidebar/dist/scss/styles.scss';
 @import '~bootstrap/scss/bootstrap';
