@@ -11,7 +11,13 @@ const Error = ({ error }) => {
   if (!error) return null;
 
   return (
-    <Toast onClose={() => setShow(false)} show={show} delay={2200} autohide>
+    <Toast
+      onClose={() => setShow(false)}
+      show={show}
+      delay={2200}
+      autohide
+      className="shadow-sm"
+    >
       <Toast.Body>
         <Form.Text variant="danger" className="text-danger m-0 p-0 text-right">
           {error}
