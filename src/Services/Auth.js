@@ -3,7 +3,7 @@ import axios from './Api';
 /**
  *
  * @param {{ login: string, pass: string }} body - dados de acesso do usuário
- * @return retorna o token e setor do usuário (necessário para navegar)
+ * @return {{ sector: string, }} retorna o token e setor do usuário (necessário para navegar)
  */
 export const postAuthUser = async (body) => {
   try {
@@ -19,7 +19,7 @@ export const postAuthUser = async (body) => {
 
 /**
  *
- * @return retorna os dados do usuário
+ * @return  retorna os dados do usuário
  */
 export const getAuthUser = async () => {
   try {
