@@ -1,0 +1,31 @@
+.cards {
+  margin: 0 auto 1.2rem;
+  width: 17rem;
+  min-width: 17rem !important;
+  max-width: 17rem !important;
+  display: inline-block !important;
+  border-bottom: 4px solid rgba(77, 83, 88, 0.306) !important;
+}
+
+.firstLetter:first-letter {
+  text-transform: capitalize;
+}
+
+.btnCard {
+  background-color: rgba(182, 197, 211, 0.158) !important;
+  position: absolute !important;
+  top: -17px !important;
+  right: -0.7rem !important;
+  color: rgba(0, 0, 0, 0.55) !important;
+}
+
+.btnCard:hover {
+  background-color: rgba(182, 197, 211, 0.28) !important;
+  color: #333 !important;
+}
+
+@media (max-width: 767px) {
+  .cards {
+    margin: 0 auto 18px !important;
+  }
+}
